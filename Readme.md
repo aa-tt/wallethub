@@ -1,4 +1,4 @@
-1. Install gradle in your machine
+1. git clone or download as zip
 2. Goto project directory and execute commands, based on type of OS -
 
 if Windows-  
