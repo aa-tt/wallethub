@@ -33,7 +33,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 			String[] dates = startDate.split("\\.");
 			String formattedDate = new StringBuilder(dates[0]).append(" ").append(dates[1]).toString();
 			Timestamp startTime = Timestamp.valueOf(formattedDate);
-			Timestamp endTime = new Timestamp(Timestamp.valueOf(formattedDate).getTime()+(duration.equals("hourly")?60000:86400000));
+			Timestamp endTime = new Timestamp(Timestamp.valueOf(formattedDate).getTime()+(duration.equals("hourly")?3600000:86400000));
 			String QUERY_LOG = "SELECT ip_address, count(*) FROM LOG_TABLE"
 					+ " WHERE timestamp >= '"+ startTime +"' and timestamp < '"+ endTime + "'" 
 					+ " group by(ip_address)"
